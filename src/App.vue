@@ -28,7 +28,8 @@ export default {
 </script>
 
 <template>
-  <searchBox @searchSomething="searchFromAPI(this.store.API_URL_MOVIES), searchFromAPI(this.store.API_URL_SERIES)" />
+  <!-- <searchBox @searchSomething="searchFromAPI(this.store.API_URL_MOVIES), searchFromAPI(this.store.API_URL_SERIES)" /> -->
+  <searchBox @searchSomething="searchFromAPI(this.store.API_URL_MOVIES)" />
   <MovieList />
 </template>
 
