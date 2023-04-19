@@ -1,10 +1,12 @@
 
 <script>
 import { store } from './store.js';
-import searchBox from "./components/searchBox.vue"
+import MovieList from "./components/MovieList.vue"
+import SearchBox from "./components/searchBox.vue"
 export default {
   components: {
-    searchBox
+    SearchBox, 
+    MovieList
   },
   data() {
 
@@ -23,13 +25,7 @@ export default {
 
 <template>
   <searchBox @searchSomething="searchMovies()"/>
-  <ul v-for="movie in this.store.movies">
-    <li>{{ movie.title }}</li>
-    <li> {{ movie.original_title}}</li>
-    <li> {{ movie.original_language }}</li>
-    <li>{{ movie.vote_average }}</li>
-
-  </ul>
+  <MovieList/>
 </template>
 
 
