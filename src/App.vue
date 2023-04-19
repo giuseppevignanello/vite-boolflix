@@ -23,7 +23,6 @@ export default {
         alert("Please search something")
       }
     }
-    //CREATE FUNCTION 
   },
 }
 </script>

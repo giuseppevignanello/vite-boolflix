@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-    <li v-if="this.store.languages.includes(language)">
+    <li class="flag" v-if="this.store.languages.includes(language)">
         <img :src="flagPath+language+'.png'" alt="">
     </li>
     <li v-else>
