@@ -26,6 +26,9 @@ export default {
     <li v-else-if="movie.original_language == 'fr'">
         <img src="../assets/img/flag_france.png" alt="">
     </li>
+    <li v-else>
+        {{ movie.original_language }}    
+    </li>
 </template>
 
 
