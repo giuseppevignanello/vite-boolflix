@@ -5,7 +5,7 @@ import MovieList from "./components/MovieList.vue"
 import SearchBox from "./components/searchBox.vue"
 export default {
   components: {
-    SearchBox, 
+    SearchBox,
     MovieList
   },
   data() {
@@ -16,8 +16,12 @@ export default {
   },
   methods: {
     searchFromAPI(APIUrl) {
-      const url = APIUrl + this.store.searchValue
-      this.store.callAPI(url)
+      if (this.store.searchValue.trim() != "") {
+        const url = APIUrl + this.store.searchValue
+        this.store.callAPI(url)
+      } else {
+        alert("Please search something")
+      }
     }
     //CREATE FUNCTION 
   },
@@ -25,8 +29,8 @@ export default {
 </script>
 
 <template>
-  <searchBox @searchSomething="searchFromAPI(this.store.API_URL_MOVIES), searchFromAPI(this.store.API_URL_SERIES)"/>
-  <MovieList/>
+  <searchBox @searchSomething="searchFromAPI(this.store.API_URL_MOVIES), searchFromAPI(this.store.API_URL_SERIES)" />
+  <MovieList />
 </template>
 
 
