@@ -16,15 +16,20 @@ export default {
   },
   methods: {
     searchMovies() {
-      const url = this.store.API_URL + this.store.searchValue
+      const url = this.store.API_URL_MOVIES + this.store.searchValue
+      this.store.callAPI(url)
+    }, 
+    searchSeries(){
+      const url = this.store.API_URL_SERIES + this.store.searchValue
       this.store.callAPI(url)
     }
+    //CREATE FUNCTION 
   },
 }
 </script>
 
 <template>
-  <searchBox @searchSomething="searchMovies()"/>
+  <searchBox @searchSomething="searchMovies(), searchSeries()"/>
   <MovieList/>
 </template>
 

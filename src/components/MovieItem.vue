@@ -8,7 +8,8 @@ export default {
     },
     name: "MovieItem",
     props: {
-        movie: Object
+        movie: Object, 
+        series: Object,
     },
     data() {
 
@@ -23,8 +24,11 @@ export default {
 <template>
     <li>
         <ul>
-            <li>{{ movie.title }}</li>
-            <li> {{ movie.original_title }}</li>
+            <li v-if="movie.title">{{ movie.title }}</li>
+            <li v-else-if="movie.name"> {{ movie.name }}</li>
+            <li v-if="movie.original_title"> {{ movie.original_title }}</li>
+            <li v-else-if="movie.original_name">{{ movie.original_name }} </li>
+    
             <MovieLanguage :movie="movie"/>
             <li>{{ movie.vote_average }}</li>
 
