@@ -4,30 +4,23 @@ import { store } from "../store";
 export default {
     name: "MovieLanguage",
     props: {
-        movie: Object
+        language: String
     },
     data() {
-
         return {
-            store
+            store,
+            flagPath: "../../public/img/"
         }
     }
 }
 </script>
 
 <template>
-    <li v-if="movie.original_language == 'it'">
-        <img src="../assets/img/flag_italy.png" alt="">
-    </li>
-    <li v-else-if="movie.original_language == 'en'">
-        <img src="../assets/img/flag_us.png" alt="">
-        <img src="../assets/img/flag_uk.png" alt="">
-    </li>
-    <li v-else-if="movie.original_language == 'fr'">
-        <img src="../assets/img/flag_france.png" alt="">
+    <li v-if="this.store.languages.includes(language)">
+        <img :src="flagPath+language+'.png'" alt="">
     </li>
     <li v-else>
-        {{ movie.original_language }}    
+        {{language}}
     </li>
 </template>
 

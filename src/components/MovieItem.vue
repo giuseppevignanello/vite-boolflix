@@ -29,7 +29,7 @@ export default {
             <li v-if="movie.original_title"> {{ movie.original_title }}</li>
             <li v-else-if="movie.original_name">{{ movie.original_name }} </li>
     
-            <MovieLanguage :movie="movie"/>
+            <MovieLanguage :language="movie.original_language"/>
             <li>{{ movie.vote_average }}</li>
 
         </ul>
