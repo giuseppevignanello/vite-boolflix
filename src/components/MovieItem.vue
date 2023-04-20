@@ -11,10 +11,8 @@ export default {
         movie: Object,
     },
     data() {
-
-
         return {
-            click: false,
+            clicked: false,
             store,
             starVote: Math.ceil(this.movie.vote_average / 2)
         }
@@ -26,7 +24,7 @@ export default {
             }
         },
         change() {
-           this.click = !this.click
+           this.clicked = !this.clicked
     
         }
     }
@@ -36,10 +34,10 @@ export default {
 <!-- prevent no photo -->
 <template>
     <div @mouseleave="change( )" @mouseenter="change()" class="item col mb-3 text-white">
-        <div v-show="!click" class="poster card">
+        <div v-show="!clicked" class="poster card">
             <img class="card-img-top" :src="this.store.generalPosterPath + movie.poster_path" alt="">
         </div>
-        <div v-show="click" class="text card">
+        <div v-show="clicked" class="text card">
             <div class="card-body">
                 <div v-if="isMovie()">
                     <span> Title </span>
@@ -59,6 +57,8 @@ export default {
                 <p>
                     {{ movie.overview }}
                 </p>
+                <h5>Cast:</h5>
+                <p></p>
             </div>
 
         </div>
