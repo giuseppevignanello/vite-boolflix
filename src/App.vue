@@ -5,7 +5,7 @@ import AppHeader from "./components/AppHeader.vue"
 import MovieList from "./components/MovieList.vue"
 export default {
   components: {
-    MovieList, 
+    MovieList,
     AppHeader
   },
   data() {
@@ -13,16 +13,24 @@ export default {
     return {
       store
     }
-  },
-  // mounted: {
-   
+  }, 
+  created() {
+    const url_movies = this.store.API_GENRES_BASE + "movie/list?api_key=" + this.store.API_KEY;
+    const url_tv = this.store.API_GENRES_BASE + "/tv/list?api_key=" + this.store.API_KEY 
+    this.store.callAPIGenresMovies(url_movies)
+    console.log(url_movies)
+    this.store.callAPIGenresTV(url_tv)
+  }
+
+  
+
 
   // }
 }
 </script>
 
 <template>
-  <AppHeader/>
+  <AppHeader />
   <MovieList />
 </template>
 

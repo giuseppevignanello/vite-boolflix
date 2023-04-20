@@ -15,19 +15,12 @@ export default {
         return {
             store
         }
-    }, 
-    methods: {
-        isMovie() {
-            if (this.title) {
-                return true
-            }
-        },
     }
 }
 </script>
 
 <template>
-    <div v-if="isMovie()">
+    <div v-if="this.store.isMovie(this.title)">
         <span> Title </span>
         <h5>{{ title }}</h5>
         <span>Orginal Title</span>
