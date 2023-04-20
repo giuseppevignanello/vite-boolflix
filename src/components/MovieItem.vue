@@ -18,6 +18,13 @@ export default {
             starVote: Math.ceil(this.movie.vote_average/2)
         }
     }, 
+    methods: {
+        isMovie() {
+            if (this.movie.title) {
+                return true 
+            }
+        }
+    }
 }
 </script>
 
@@ -25,11 +32,8 @@ export default {
     <li>
         <!-- media function -->
         <ul>
-            <li v-if="movie.title">{{ movie.title }}</li>
-            <li v-else-if="movie.name"> {{ movie.name }}</li>
-            <li v-if="movie.original_title"> {{ movie.original_title }}</li>
-            <li v-else-if="movie.original_name">{{ movie.original_name }} </li>
-
+            <li v-if="isMovie()">{{ movie.title }} <br> {{ movie.original_title }}</li>
+            <li v-else>{{ movie.name }} <br> {{ movie.original_name }}</li>
             <MovieLanguage :language="movie.original_language" />
             <li>
                 <i v-for="n in starVote" class="fa-solid fa-star"></i>
