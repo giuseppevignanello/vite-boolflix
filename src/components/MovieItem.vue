@@ -1,7 +1,7 @@
 
 <script>
-import { store } from "../store";
-import MovieText from "./MovieLanguage.vue"
+import { store } from "../store.js"
+import MovieText from "./MovieText.vue"
 import MovieLanguage from "./MovieLanguage.vue"
 export default {
     components: {

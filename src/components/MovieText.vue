@@ -1,6 +1,6 @@
 
 <script>
-import { store } from "../store.vue"
+import { store } from "../store.js"
 export default {
     name: "MovieText",
     props: {
@@ -18,7 +18,7 @@ export default {
     }, 
     methods: {
         isMovie() {
-            if (this.movie.title) {
+            if (this.title) {
                 return true
             }
         },

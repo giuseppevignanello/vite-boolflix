@@ -14,6 +14,10 @@ export default {
       store
     }
   },
+  // mounted: {
+   
+
+  // }
 }
 </script>
 
