@@ -27,34 +27,35 @@ export default {
         },
         change() {
            this.click = !this.click
-            // textEl.classList.remove("d-none")
+    
         }
     }
 }
 </script>
 
+<!-- prevent no photo -->
 <template>
-    <div @mouseleave="change( )" @mouseenter="change()" class="item col mb-3">
+    <div @mouseleave="change( )" @mouseenter="change()" class="item col mb-3 text-white">
         <div v-show="!click" class="poster card">
             <img class="card-img-top" :src="this.store.generalPosterPath + movie.poster_path" alt="">
         </div>
         <div v-show="click" class="text card">
             <div class="card-body">
                 <div v-if="isMovie()">
-                    <h5> Title </h5>
-                    <span>{{ movie.title }}</span>
-                    <h5>Orginal Title</h5>
-                    <span>{{ movie.original_title }}</span>
+                    <span> Title </span>
+                    <h5>{{ movie.title }}</h5>
+                    <span>Orginal Title</span>
+                    <h5>{{ movie.original_title }}</h5>
                 </div>
                 <div v-else>
-                    <h5>Title</h5>
-                    <span> {{ movie.name }} </span>
-                    <h5>Original Name</h5>
-                    <span>{{ movie.original_name }}</span>
+                    <span>Title</span>
+                    <h5> {{ movie.name }} </h5>
+                    <span>Original Name</span>
+                    <h5>{{ movie.original_name }}</h5>
                 </div>
                 <MovieLanguage :language="movie.original_language" /> <br>
-                <font-awesome-icon :icon="['fas', 'star']" v-for="n in starVote" />
-                <font-awesome-icon :icon="['far', 'star']" v-for="n in 5 - starVote" />
+                <font-awesome-icon class="text-warning" :icon="['fas', 'star']" v-for="n in starVote" />
+                <font-awesome-icon class="text-warning" :icon="['far', 'star']" v-for="n in 5 - starVote" />
                 <p>
                     {{ movie.overview }}
                 </p>
