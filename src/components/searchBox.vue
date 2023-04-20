@@ -13,8 +13,8 @@ export default {
 
 <template>
     <div>
-        <input type="text" v-model="this.store.searchValue">
-        <button @click="$emit('searchSomething')" @keyup.enter="$emit('searchSomething')" > Click </button>
+        <input type="text" v-model="this.store.searchValue" @keyup.enter="$emit('searchSomething')" >
+        <button @click="$emit('searchSomething')" > Click </button>
     </div>
 </template >
 

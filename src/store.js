@@ -9,11 +9,15 @@ export const store = reactive({
     languages: [
         "it",
         "en",
-        "fr" 
+        "fr", 
+        "ja", 
+        "es", 
+        "ko", 
+        "de", 
+        "hi"
     ],
     //Add mixed API
-    API_URL_SERIES: "https://api.themoviedb.org/3/search/tv?api_key=85f7fb5ef1ff1562662336a11a351b9b&query=",
-    API_URL_MOVIES: "https://api.themoviedb.org/3/search/movie?api_key=85f7fb5ef1ff1562662336a11a351b9b&query=",
+    API_URL: "https://api.themoviedb.org/3/search/multi?api_key=85f7fb5ef1ff1562662336a11a351b9b&query=",
     callAPI(url) {
         console.log('ciao sto chiamando',url)
         axios

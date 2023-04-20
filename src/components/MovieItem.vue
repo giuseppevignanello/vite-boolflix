@@ -9,7 +9,6 @@ export default {
     name: "MovieItem",
     props: {
         movie: Object,
-        series: Object,
     },
     data() {
 

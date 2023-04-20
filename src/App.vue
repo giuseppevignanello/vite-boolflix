@@ -29,7 +29,7 @@ export default {
 
 <template>
   <!-- <searchBox @searchSomething="searchFromAPI(this.store.API_URL_MOVIES), searchFromAPI(this.store.API_URL_SERIES)" /> -->
-  <searchBox @searchSomething="searchFromAPI(this.store.API_URL_MOVIES)" />
+  <searchBox @searchSomething="searchFromAPI(this.store.API_URL)" />
   <MovieList />
 </template>
 
