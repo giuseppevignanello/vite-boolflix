@@ -9,19 +9,20 @@ export default {
     data() {
         return {
             store,
-            flagPath: "../../public/img/"
+            flagPath: "/img/"
         }
     }
 }
 </script>
 
 <template>
-    <li class="flag" v-if="this.store.languages.includes(language)">
+    <div class="flag" v-if="this.store.languages.includes(language)">
+        <h5> Language</h5>
         <img :src="flagPath+language+'.png'" alt="">
-    </li>
-    <li v-else>
+    </div>
+    <div v-else>
         {{language}}
-    </li>
+    </div>
 </template>
 
 

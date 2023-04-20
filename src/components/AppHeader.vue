@@ -1,7 +1,7 @@
 
 <script>
 import { store } from "../store.js"
-import SearchBox from "./searchBox.vue"
+import SearchBox from "./SearchBox.vue"
 export default {
     name: "AppHeader",
     components: {
@@ -28,11 +28,13 @@ export default {
 
 <template>
     <header id="appHeader">
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg align-items-center">
             <div class="container-fluid">
-                <div class="logo">
-                    <img class="d-none d-md-inline-block " src="/img/logo_netflix_large.jpg" alt="">
-                    <img class="d-md-none" src="/img/logo_netflix_small.jpg" alt="">
+                <!-- fix ultra small layout -->
+                <!-- fix btn layout -->
+                <div class="logo d-flex align-items-center">
+                    <img class="d-none d-md-inline-block" src="/img/logo_netflix_large.jpg" alt="">
+                    <img class="d-md-none negative_ms_2" src="/img/logo_netflix_small.jpg" alt="">
                 </div>
                 <searchBox @searchSomething="searchFromAPI(this.store.API_URL)" />
              

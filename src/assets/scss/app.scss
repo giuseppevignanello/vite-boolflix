@@ -1,6 +1,15 @@
 @use "../../../node_modules/bootstrap/scss/bootstrap.scss";
 @use "../scss/partials/variables.scss" as *;
 
+//Utilities
+.negative_ms_2 {
+margin-left: -2rem;
+}
+
+.bg_logo_color {
+    background-color: $logo_color;
+}
+
 img {
     max-width: 100%;
     max-height: 100%;
@@ -9,9 +18,11 @@ img {
     height: 100px;
     background: $dark;
     .logo {
-        height: 80px
+        height: 80px; 
     }
 }
+
+
 
 
 .flag {

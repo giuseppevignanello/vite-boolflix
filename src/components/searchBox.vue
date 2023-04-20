@@ -14,7 +14,7 @@ export default {
 <template>
     <div class="d-flex">
         <input class="form-control" aria-label=".form-control-lg example" type="text" v-model="this.store.searchValue" @keyup.enter="$emit('searchSomething')" >
-        <button class="btn" @click="$emit('searchSomething')" > Click </button>
+        <button class="btn bg_logo_color text-white" @click="$emit('searchSomething')" > Click </button>
     </div>
 </template >
 
