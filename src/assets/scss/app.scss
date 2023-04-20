@@ -1,3 +1,19 @@
+@use "../../../node_modules/bootstrap/scss/bootstrap.scss";
+@use "../scss/partials/variables.scss" as *;
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+#appHeader {
+    height: 100px;
+    background: $dark;
+    .logo {
+        height: 80px
+    }
+}
+
+
 .flag {
     img {
         width: 40px;
