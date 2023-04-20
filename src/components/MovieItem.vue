@@ -36,8 +36,8 @@ export default {
             <li v-else>{{ movie.name }} <br> {{ movie.original_name }}</li>
             <MovieLanguage :language="movie.original_language" />
             <li>
-                <i v-for="n in starVote" class="fa-solid fa-star"></i>
-                <i v-for="n in (5 - starVote)" class="fa-regular fa-star"></i>
+                <font-awesome-icon :icon="['fas','star']"  v-for="n in starVote" />
+                <font-awesome-icon :icon="['far','star']"  v-for="n in 5 - starVote" />
             </li>
             <li>
                 <img :src="this.store.generalPosterPath + movie.poster_path" alt="">
