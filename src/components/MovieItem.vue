@@ -1,10 +1,12 @@
 
 <script>
 import { store } from "../store";
+import MovieText from "./MovieLanguage.vue"
 import MovieLanguage from "./MovieLanguage.vue"
 export default {
     components: {
-        MovieLanguage
+        MovieLanguage, 
+        MovieText
     },
     name: "MovieItem",
     props: {
@@ -18,11 +20,6 @@ export default {
         }
     },
     methods: {
-        isMovie() {
-            if (this.movie.title) {
-                return true
-            }
-        },
         change() {
            this.clicked = !this.clicked
     
@@ -39,18 +36,7 @@ export default {
         </div>
         <div v-show="clicked" class="text card">
             <div class="card-body">
-                <div v-if="isMovie()">
-                    <span> Title </span>
-                    <h5>{{ movie.title }}</h5>
-                    <span>Orginal Title</span>
-                    <h5>{{ movie.original_title }}</h5>
-                </div>
-                <div v-else>
-                    <span>Title</span>
-                    <h5> {{ movie.name }} </h5>
-                    <span>Original Name</span>
-                    <h5>{{ movie.original_name }}</h5>
-                </div>
+                <MovieText :title="movie.title" :original_title="movie.original_title" :name="movie.name" :original_name="movie.original_name" />
                 <MovieLanguage :language="movie.original_language" /> <br>
                 <font-awesome-icon class="text-warning" :icon="['fas', 'star']" v-for="n in starVote" />
                 <font-awesome-icon class="text-warning" :icon="['far', 'star']" v-for="n in 5 - starVote" />
