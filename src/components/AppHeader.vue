@@ -25,7 +25,8 @@ export default {
             } else {
                 alert("Please search something")
             }
-        }
+        }, 
+        
     },
 }
 </script>

@@ -1,3 +1,5 @@
+<!-- some cards are too much big -->
+
 
 <script>
 import { store } from "../store.js"
@@ -22,10 +24,15 @@ export default {
     methods: {
         change() {
             this.clicked = !this.clicked
-
+        },
+        searchCast() {
+            const urlCast = this.store.API_MOVIE_CAST_BASE + this.movie.id + "/credits?api_key=" + this.store.API_KEY
+            this.store.callAPICast(urlCast)
         }
     }
+
 }
+
 </script>
 
 <!-- prevent no photo -->
@@ -44,13 +51,13 @@ export default {
                 <p>
                     {{ movie.overview }}
                 </p>
-                <h5>Cast:</h5>
-                <p></p>
+                <h5 @click="searchCast()">Cast:</h5>
+                    <span v-for="actor in this.store.cast">{{ actor.name}}</span>
                 <h5>Genre:</h5>
                 <div v-if="this.store.isMovie(this.movie.title)">
                     <div v-for="item in this.store.genres_movies">
                         <div v-for="id in movie.genre_ids">
-                            <span v-if="item.id == id"> {{ item.name }}</span>
+                            <span v-if="item.id == id"> {{ item.name}}</span>
                         </div>
                     </div>
                 </div>
@@ -61,7 +68,6 @@ export default {
                         </div>
                     </div>
                 </div>
-                <!-- <div v-else> Pipo </div> -->
             </div>
 
         </div>

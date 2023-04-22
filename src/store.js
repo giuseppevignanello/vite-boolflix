@@ -8,7 +8,9 @@ export const store = reactive({
     movies: null,
     genres_movies: null,
     genres_tv: null,
+    cast: null,
     API_KEY: "85f7fb5ef1ff1562662336a11a351b9b",
+    API_MOVIE_CAST_BASE: "https://api.themoviedb.org/3/movie/",
     API_GENRES_BASE: "https://api.themoviedb.org/3/genre/",
     API_URL: "https://api.themoviedb.org/3/search/multi?api_key=85f7fb5ef1ff1562662336a11a351b9b&query=",
     callAPI(url) {
@@ -48,12 +50,21 @@ export const store = reactive({
                 console.error(error.message);
             })
     }, 
+    callAPICast(url) {
+        axios
+            .get(url)
+            .then(response => {
+                this.loading = false,
+                    this.cast = response.data.cast.slice(0, 5)
+            })
+            .catch(error => {
+                console.log(error);
+                console.error(error.message);
+            })
+
+    }, 
     isMovie(title) {
         if(title) {
         return true}
-    },
-    
-    
-   
-   
+    }, 
 })
