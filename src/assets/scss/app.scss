@@ -12,6 +12,10 @@
 
 .fs_9 {
     font-size: 9px;
+} 
+
+.mw_7 {
+    max-width:70%
 }
 
 img {
@@ -24,7 +28,7 @@ body {
 }
 
 #appHeader {
-    height: 100px;
+    height: 150px;
     background: $darker;
 
     .logo {

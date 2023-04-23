@@ -51,6 +51,18 @@ export default {
                 <searchBox @searchSomething="searchFromAPI(this.store.API_URL), searchCast()" />
             </div>
         </nav>
+        <div class="d-flex align-items-center">
+            <label class="text-white me-2" for="movies_genres">Movies Genres</label>
+            <select class="form-select me-2" id="movie_genres">
+                <option selected></option>
+                <option v-for="genre in this.store.genres_movies" :value="genre.name">{{ genre.name }}</option>
+            </select>
+            <label class="text-white me-2" for="tv_genres">TV Genres</label>
+            <select class="form-select me-2" id="tv_genres">
+                <option selected></option>
+                <option v-for="genre in this.store.genres_tv" :value="genre.name">{{ genre.name }}</option>
+            </select>
+        </div>
     </header>
 </template>
 
