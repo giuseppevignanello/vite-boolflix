@@ -25,14 +25,6 @@ export default {
         change() {
             this.clicked = !this.clicked
         },
-        searchCast() {
-            this.store.movies.forEach(element => {
-                const movieId = element.id
-                const urlCast = this.store.API_MOVIE_CAST_BASE + movieId + "/credits?api_key=" + this.store.API_KEY
-                this.store.callAPICast(urlCast)
-            });
-
-        }
     }
 
 }
@@ -55,13 +47,13 @@ export default {
                 <p class="fs_9" id="overview">
                     {{ movie.overview }}
                 </p>
-                <h6 @click="searchCast()">Cast:</h6>
-                    <span class="fs_9 me-2" v-for="actor in this.store.cast">{{ actor.name}}</span>
+                <h6>Cast:</h6>
+                <span class="fs_9 me-2"></span>
                 <h6>Genre:</h6>
                 <div v-if="this.store.isMovie(this.movie.title)">
                     <div v-for="item in this.store.genres_movies">
                         <div v-for="id in movie.genre_ids">
-                            <span class="fs_9" v-if="item.id == id"> {{ item.name}}</span>
+                            <span class="fs_9" v-if="item.id == id"> {{ item.name }}</span>
                         </div>
                     </div>
                 </div>

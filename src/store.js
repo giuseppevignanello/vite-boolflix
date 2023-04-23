@@ -56,7 +56,7 @@ export const store = reactive({
             .get(url)
             .then(response => {
                 this.loading = false,
-                    this.cast = response.data.cast.slice(0, 5)
+                    this.cast = response.data.cast
             })
             .catch(error => {
                 console.log(error);

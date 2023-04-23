@@ -26,7 +26,14 @@ export default {
                 alert("Please search something")
             }
         },
-        
+        searchCast() {
+            this.store.movies.forEach(element => {
+                const urlCast = this.store.API_MOVIE_CAST_BASE + element.id + "/credits?api_key=" + this.store.API_KEY
+                this.store.callAPICast(urlCast)
+            });
+
+        },
+
     },
 }
 </script>
@@ -41,7 +48,7 @@ export default {
                     <AppLogo />
                     <AppMenu />
                 </div>
-                <searchBox @searchSomething="searchFromAPI(this.store.API_URL)" />
+                <searchBox @searchSomething="searchFromAPI(this.store.API_URL), searchCast()" />
             </div>
         </nav>
     </header>
