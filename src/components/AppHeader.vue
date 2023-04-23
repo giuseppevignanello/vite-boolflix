@@ -7,8 +7,8 @@ import SearchBox from "./SearchBox.vue"
 export default {
     name: "AppHeader",
     components: {
-        SearchBox, 
-        AppLogo, 
+        SearchBox,
+        AppLogo,
         AppMenu
     },
     data() {
@@ -25,7 +25,7 @@ export default {
             } else {
                 alert("Please search something")
             }
-        }, 
+        },
         
     },
 }
@@ -38,8 +38,8 @@ export default {
                 <!-- fix ultra small layout -->
                 <!-- fix btn layout -->
                 <div id="leftHeader" class="d-flex align-items-center">
-                    <AppLogo/>
-                    <AppMenu/>
+                    <AppLogo />
+                    <AppMenu />
                 </div>
                 <searchBox @searchSomething="searchFromAPI(this.store.API_URL)" />
             </div>

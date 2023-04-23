@@ -14,7 +14,11 @@ export default {
       store
     }
   },
+  mounted() {
+    this.store.callAPI(this.store.API_TREND)
+  },
   created() {
+
     const url_movies = this.store.API_GENRES_BASE + "movie/list?api_key=" + this.store.API_KEY;
     const url_tv = this.store.API_GENRES_BASE + "/tv/list?api_key=" + this.store.API_KEY
     this.store.callAPIGenresMovies(url_movies)

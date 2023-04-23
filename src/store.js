@@ -13,6 +13,7 @@ export const store = reactive({
     API_MOVIE_CAST_BASE: "https://api.themoviedb.org/3/movie/",
     API_GENRES_BASE: "https://api.themoviedb.org/3/genre/",
     API_URL: "https://api.themoviedb.org/3/search/multi?api_key=85f7fb5ef1ff1562662336a11a351b9b&query=",
+    API_TREND: "https://api.themoviedb.org/3/trending/all/day?api_key=85f7fb5ef1ff1562662336a11a351b9b",
     callAPI(url) {
         axios
             .get(url)
