@@ -25,19 +25,24 @@ export default {
         change() {
             this.clicked = !this.clicked
         },
+        getMoviePoster(movie) {
+            if(movie.poster_path) {
+               return this.store.generalPosterPath + movie.poster_path
+            } else {
+                return "../../public/img/No_Image_Available.jpg"
+            }
+        }
     }
 
 }
 
 </script>
-
-<!-- prevent no photo -->
 <template>
     <div @mouseleave="change()" @mouseenter="change()" class="item col mb-3 text-white">
-        <div v-show="!clicked" class="poster card">
-            <img class="card-img-top" :src="this.store.generalPosterPath + movie.poster_path" alt="">
+        <div v-show="!clicked" class="poster card h-100">
+            <img class="card-img-top h-100" :src="getMoviePoster(movie)" alt="">
         </div>
-        <div v-show="clicked" class="text card">
+        <div v-show="clicked" class="text card h-100">
             <div class="card-body">
                 <MovieText :title="movie.title" :original_title="movie.original_title" :name="movie.name"
                     :original_name="movie.original_name" />

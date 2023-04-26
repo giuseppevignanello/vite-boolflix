@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-    <div class="mw_75  d-flex align-items-center">  
+    <div class="mw_70 d-flex align-items-center">  
         <font-awesome-icon class="text-white fa-xl me-2" icon="bell" />
         <input class="form-control" aria-label=".form-control-lg example" type="text" v-model="this.store.searchValue"
             @keyup.enter="$emit('searchSomething')">
