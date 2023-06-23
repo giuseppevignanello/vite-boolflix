@@ -28,7 +28,6 @@ export default {
 
 <template>
     <div class="flag" v-if="this.languages.includes(language)">
-        <h6> Language</h6>
         <img :src="flagPath + language + '.png'" alt="">
     </div>
     <div v-else>

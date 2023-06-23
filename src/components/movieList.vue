@@ -17,11 +17,11 @@ export default {
 <template>
     <div id="movie_list">
         <div class="container my-5">
-            <div class="row row-cols-3">
+            <div class="row row-cols-5">
                 <MovieItem :movie="movie" v-for="movie in this.store.movies" />
             </div>
         </div>
-        
+
     </div>
 </template>
 

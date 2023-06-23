@@ -26,8 +26,8 @@ export default {
             this.clicked = !this.clicked
         },
         getMoviePoster(movie) {
-            if(movie.poster_path) {
-               return this.store.generalPosterPath + movie.poster_path
+            if (movie.poster_path) {
+                return this.store.generalPosterPath + movie.poster_path
             } else {
                 return "../../public/img/No_Image_Available.jpg"
             }
@@ -49,23 +49,20 @@ export default {
                 <MovieLanguage :language="movie.original_language" /> <br>
                 <font-awesome-icon class="text-warning" :icon="['fas', 'star']" v-for="n in starVote" />
                 <font-awesome-icon class="text-warning" :icon="['far', 'star']" v-for="n in 5 - starVote" />
-                <p class="fs_9" id="overview">
+                <p id="overview">
                     {{ movie.overview }}
                 </p>
-                <h6>Cast:</h6>
-                <span class="fs_9 me-2"></span>
-                <h6>Genre:</h6>
-                <div v-if="this.store.isMovie(this.movie.title)">
+                <div class="genre" v-if="this.store.isMovie(this.movie.title)">
                     <div v-for="item in this.store.genres_movies">
                         <div v-for="id in movie.genre_ids">
-                            <span class="fs_9" v-if="item.id == id"> {{ item.name }}</span>
+                            <span v-if="item.id == id"> {{ item.name }}</span>
                         </div>
                     </div>
                 </div>
-                <div v-else>
+                <div class="genre" v-else>
                     <div v-for="item in this.store.genres_tv">
                         <div v-for="id in movie.genre_ids">
-                            <span class="fs_9" v-if="item.id == id"> {{ item.name }}</span>
+                            <span v-if="item.id == id"> {{ item.name }}</span>
                         </div>
                     </div>
                 </div>

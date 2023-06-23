@@ -12,10 +12,10 @@
 
 .fs_9 {
     font-size: 9px;
-} 
+}
 
 .mw_7 {
-    max-width:70%
+    max-width: 70%
 }
 
 img {
@@ -28,7 +28,7 @@ body {
 }
 
 #appHeader {
-    height: 150px;
+    height: 180px;
     background: $darker;
 
     .logo {
@@ -37,14 +37,22 @@ body {
 }
 
 .item {
+
+    max-height: 300px;
+
     .text {
         background-color: $darker;
 
     }
+}
 
-    
+;
 
-    
+#overview,
+.genre {
+    max-height: 80px;
+    overflow-y: scroll;
+    font-size: 12px;
 }
 
 .flag {
