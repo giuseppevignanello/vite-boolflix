@@ -9,7 +9,7 @@ export default {
     data() {
         return {
             store,
-            flagPath: "../../img/",
+            flagPath: "../../public/img/",
             languages: [
                 "it",
                 "en",
