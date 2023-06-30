@@ -14,7 +14,7 @@ export default {
             ],
             store
         }
-    }, 
+    },
     methods: {
         returnToTrend() {
             this.store.callAPI(this.store.API_TREND)
@@ -25,7 +25,7 @@ export default {
 
 <template>
     <ul class=" list-unstyled align-items-center d-none d-lg-flex">
-        <li @click="returnToTrend()" class="text-white ms-3"> 
+        <li @click="returnToTrend()" class="text-white ms-3">
             <a class="nav-link" href="#">Home</a>
         </li>
         <li v-for="item in this.menu" class="text-white ms-3">
